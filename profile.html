@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Profile - Lumina Coffee</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#a67c52', // Coffee Brown
+            secondary: '#d4bba3', // Latte Beige
+            dark: '#2c241b', // Espresso
+            surface: '#fdfbf7', // Creamy White
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans text-slate-600 antialiased bg-surface overflow-x-hidden relative selection:bg-primary selection:text-white">
+
+  <!-- Navbar -->
+  <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group cursor-pointer">
+        <div
+          class="w-10 h-10 bg-dark text-secondary rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition duration-300">
+          <img src="images/logo.svg" alt="Lumina Logo" class="w-6 h-6">
+        </div>
+        <span class="text-3xl font-cursive font-bold tracking-wide text-dark group-hover:text-primary transition">Lumina</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8 items-center font-medium text-sm tracking-wide">
+        <a href="index.html" class="text-slate-500 hover:text-primary transition hover:-translate-y-0.5">Home</a>
+        <a href="profile.html" class="text-primary font-bold transition">Our Profile</a>
+        <a href="achievement.html" class="text-slate-500 hover:text-primary transition hover:-translate-y-0.5">Achievement</a>
+        <a href="index.html#message-us"
+          class="px-6 py-2.5 bg-dark text-white rounded-full hover:bg-primary transition shadow-lg hover:shadow-primary/30 transform hover:-translate-y-0.5">Message
+          Us</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button data-nav-toggle class="md:hidden focus:outline-none p-2 rounded-lg hover:bg-slate-100/50 transition text-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div data-nav-menu
+      class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 absolute w-full left-0 shadow-xl">
+      <div class="flex flex-col p-6 space-y-4">
+        <a href="index.html" class="text-slate-600 hover:text-primary font-medium transition">Home</a>
+        <a href="profile.html" class="text-primary font-bold text-lg">Our Profile</a>
+        <a href="achievement.html" class="text-slate-600 hover:text-primary font-medium transition">Achievement</a>
+        <a href="index.html#message-us" class="px-5 py-3 bg-dark text-white text-center rounded-xl hover:bg-primary transition">Message Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Photo Banner / Hero -->
+  <header class="relative overflow-hidden h-[50vh] min-h-[400px] mt-16 mx-2 md:mx-4 rounded-b-[3rem] shadow-2xl">
+    <div class="absolute inset-0 bg-dark">
+      <img
+        src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+        alt="Banner" class="w-full h-full object-cover opacity-50 scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+    </div>
+
+    <div class="container mx-auto px-6 h-full flex flex-col justify-end pb-16 relative z-10 text-white max-w-4xl">
+      <span class="text-secondary font-bold tracking-widest uppercase mb-4 text-sm animate-fade-in-up">Get to know us</span>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-none tracking-tight">Our Profile</h1>
+      <p class="text-xl md:text-2xl text-slate-300 max-w-xl font-light leading-relaxed border-l-4 border-primary pl-6">
+        Discover who we are and what we stand for. We are crafting the future of coffee.
+      </p>
+    </div>
+  </header>
+
+  <!-- About the Company -->
+  <section class="py-24 relative overflow-hidden">
+    <!-- Decorative Blob -->
+    <div class="blob top-1/4 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl opacity-50 -translate-x-1/2"></div>
+
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-20 relative z-10">
+      <div class="md:w-1/2">
+        <h2 class="text-4xl md:text-5xl font-bold mb-10 text-dark leading-tight">
+          About Our <br>
+          <span class="text-primary relative inline-block">
+            Coffee Shop
+            <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+            </svg>
+          </span>
+        </h2>
+        
+        <div class="space-y-6 text-lg text-slate-600 leading-relaxed font-light">
+          <p>
+            Founded in <strong class="text-dark font-semibold">2023</strong>, we are dedicated to serving the finest artisanal coffee in a warm and inviting atmosphere.
+            Our beans are ethically sourced from sustainable farms around the globe, ensuring the highest quality and
+            fair trade practices.
+          </p>
+          <p>
+            Whether you are here for a quick espresso or to spend an afternoon working, our space is designed for
+            comfort and creativity. We believe in the power of community and coffee.
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="font-bold text-xl mb-6 text-dark flex items-center">
+            <span class="w-8 h-1 bg-primary mr-3 rounded-full"></span>
+            Why Choose Us?
+          </h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <li class="flex items-center text-slate-700 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-xs flex-shrink-0">✓</div>
+              100% Arabica Beans
+            </li>
+            <li class="flex items-center text-slate-700 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-xs flex-shrink-0">✓</div>
+              Expert Baristas
+            </li>
+            <li class="flex items-center text-slate-700 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-xs flex-shrink-0">✓</div>
+              Sustainable Sourcing
+            </li>
+            <li class="flex items-center text-slate-700 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-xs flex-shrink-0">✓</div>
+              Community Events
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="md:w-1/2 relative">
+        <div class="absolute inset-0 bg-primary transform translate-x-6 translate-y-6 rounded-[2rem] opacity-20"></div>
+        <div class="absolute inset-0 bg-secondary transform -translate-x-6 -translate-y-6 rounded-[2rem] opacity-20"></div>
+        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Coffee Shop Interior" class="w-full h-auto transform transition duration-700 hover:scale-110">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision and Mission -->
+  <section class="py-24 bg-white relative overflow-hidden rounded-t-[4rem] shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.05)]">
+    <!-- Decor -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Vision -->
+        <div
+          class="bg-surface p-12 rounded-[2.5rem] border border-slate-100 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-2">
+          <div class="flex items-center mb-8">
+            <div
+              class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary mr-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-dark">Our Vision</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed text-lg">
+            To be the leading global brand in specialty coffee, recognized for our commitment to quality,
+            sustainability, and community impact. We envision a world where every cup of coffee connects people and
+            planet.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div
+          class="bg-dark p-12 rounded-[2.5rem] shadow-xl text-white group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden">
+          
+          <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+          
+          <div class="flex items-center mb-8 relative z-10">
+            <div
+              class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-secondary mr-6 backdrop-blur-sm">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold">Our Mission</h2>
+          </div>
+          <ul class="space-y-6 text-slate-300 text-lg relative z-10">
+            <li class="flex items-start">
+              <span class="text-secondary mr-4 mt-1">•</span>
+              <span>Deliver an exceptional coffee experience to every customer.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-secondary mr-4 mt-1">•</span>
+              <span>Support farmers through ethical trade and direct partnerships.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-secondary mr-4 mt-1">•</span>
+              <span>Minimize our environmental footprint through eco-friendly practices.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-8">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center space-x-3 mb-2">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+              <img src="images/logo-white.svg" alt="Lumina Logo" class="w-5 h-5">
+            </div>
+            <span class="text-4xl font-cursive font-bold tracking-wide">Lumina</span>
+          </div>
+          <p class="text-slate-400 text-sm max-w-xs">Premium artisanal coffee, brewed for perfection.</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-instagram.svg" alt="Instagram" class="w-6 h-6">
+          </a>
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-twitter.svg" alt="Twitter" class="w-6 h-6">
+          </a>
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-facebook.svg" alt="Facebook" class="w-6 h-6">
+          </a>
+        </div>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-sm text-slate-500">&copy; 2024 Lumina. Created with ❤️ by <span class="font-bold text-white">Kholid</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

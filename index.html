@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Coffee</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#a67c52', // Coffee Brown
+            secondary: '#d4bba3', // Latte Beige
+            dark: '#2c241b', // Espresso
+            surface: '#fdfbf7', // Creamy White
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="font-sans text-slate-600 antialiased bg-surface overflow-x-hidden relative selection:bg-primary selection:text-white">
+
+  <!-- Background Blobs -->
+  <div
+    class="blob top-0 left-0 w-96 h-96 bg-secondary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+  </div>
+  <div
+    class="blob bottom-0 right-0 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3 group cursor-pointer">
+        <div
+          class="w-10 h-10 bg-dark text-secondary rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition duration-300">
+          <img src="images/logo.svg" alt="Lumina Logo" class="w-6 h-6">
+        </div>
+        <span class="text-3xl font-cursive font-bold tracking-wide text-dark group-hover:text-primary transition">Lumina</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8 items-center font-medium text-sm tracking-wide">
+        <a href="#" class="text-primary font-bold transition">Home</a>
+        <a href="profile.html" class="text-slate-500 hover:text-primary transition hover:-translate-y-0.5">Our
+          Profile</a>
+        <a href="achievement.html"
+          class="text-slate-500 hover:text-primary transition hover:-translate-y-0.5">Achievement</a>
+        <a href="#message-us"
+          class="px-6 py-2.5 bg-dark text-white rounded-full hover:bg-primary transition shadow-lg hover:shadow-primary/30 transform hover:-translate-y-0.5">Message
+          Us</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button data-nav-toggle
+        class="md:hidden focus:outline-none p-2 rounded-lg hover:bg-slate-100/50 transition text-dark">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div data-nav-menu
+      class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 absolute w-full left-0 shadow-xl">
+      <div class="flex flex-col p-6 space-y-4">
+        <a href="#" class="text-primary font-bold text-lg">Home</a>
+        <a href="profile.html" class="text-slate-600 hover:text-primary font-medium transition">Our Profile</a>
+        <a href="achievement.html" class="text-slate-600 hover:text-primary font-medium transition">Achievement</a>
+        <a href="#message-us"
+          class="px-5 py-3 bg-dark text-white text-center rounded-xl hover:bg-primary transition">Message Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    class="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden mt-16 rounded-b-[3rem] shadow-2xl mx-2 md:mx-4">
+    <!-- Slider Backgrounds -->
+    <div id="hero-slider" class="absolute inset-0 z-0">
+      <div
+        class="slide absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out opacity-100 transform scale-105"
+        style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div
+        class="slide absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out opacity-0 transform scale-105"
+        style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+      </div>
+      <div
+        class="slide absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out opacity-0 transform scale-105"
+        style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+      </div>
+    </div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark/80 z-10 backdrop-blur-[1px]"></div>
+
+    <!-- Content -->
+    <div class="relative z-20 container mx-auto px-6 max-w-4xl">
+      <span
+        class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-bold tracking-widest uppercase mb-6 text-secondary">
+        Est. 2023
+      </span>
+      <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
+        Hi <span id="userName"
+          class="text-secondary underline decoration-primary decoration-4 underline-offset-4">Guest</span>,<br>
+        Welcome To Lumina
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto leading-relaxed">
+        Experience the finest artisanal blends in town. Perfectly roasted, expertly brewed, just for you.
+      </p>
+
+      <div class="mt-10 flex justify-center gap-4">
+        <a href="#message-us"
+          class="px-8 py-4 bg-primary hover:bg-secondary text-white rounded-full font-bold transition-all shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1">
+          Order Now
+        </a>
+        <a href="profile.html"
+          class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full font-bold transition-all">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Facilitation -->
+  <section class="py-24 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20 max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold text-dark mb-4">Our Facilities</h2>
+        <div class="h-1 w-20 bg-primary mx-auto rounded-full mb-6"></div>
+        <p class="text-slate-500 text-lg">Why you should choose Lumina Coffee. We provide the best environment for your
+          comfort.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <!-- Item 1 -->
+        <div
+          class="group p-10 bg-white rounded-[2rem] shadow-soft border border-slate-100/50 hover:border-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors">
+          </div>
+
+          <div
+            class="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-8 text-primary shadow-sm group-hover:scale-110 transition-transform duration-500">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-dark mb-4 group-hover:text-primary transition-colors">Premium Beans</h3>
+          <p class="text-slate-500 leading-relaxed">We source only the highest quality 100% Arabica beans from the
+            world's best highlands.</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div
+          class="group p-10 bg-white rounded-[2rem] shadow-soft border border-slate-100/50 hover:border-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors">
+          </div>
+
+          <div
+            class="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-8 text-primary shadow-sm group-hover:scale-110 transition-transform duration-500">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+              </path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-dark mb-4 group-hover:text-primary transition-colors">Cozy Space</h3>
+          <p class="text-slate-500 leading-relaxed">Relax in our ergonomically designed seating areas with ambient
+            lighting and calming atmosphere.</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div
+          class="group p-10 bg-white rounded-[2rem] shadow-soft border border-slate-100/50 hover:border-primary/20 transition-all duration-500 hover:-translate-y-3 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors">
+          </div>
+
+          <div
+            class="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-8 text-primary shadow-sm group-hover:scale-110 transition-transform duration-500">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-2xl text-dark mb-4 group-hover:text-primary transition-colors">Freshly Brewed</h3>
+          <p class="text-slate-500 leading-relaxed">Every cup is brewed fresh upon order by our certified professional
+            baristas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message Us -->
+  <section id="message-us" class="py-24 container mx-auto px-6">
+    <div class="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-100">
+      <div class="flex flex-col md:flex-row">
+
+        <!-- Form Section -->
+        <div class="md:w-1/2 p-10 md:p-16">
+          <span class="text-primary font-bold tracking-widest uppercase text-xs mb-2 block">Contact Us</span>
+          <h2 class="text-3xl font-bold mb-4 text-dark">Send us a message</h2>
+          <p class="text-slate-500 mb-10">We'd love to hear from you. Whether it's feedback or a question, we are here.
+          </p>
+
+          <form id="message-form" class="space-y-8">
+            <!-- Nama -->
+            <div class="group relative z-0 w-full">
+              <input type="text" id="name"
+                class="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer transition-colors"
+                placeholder=" " />
+              <label for="name"
+                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nama
+                Anda</label>
+              <p class="error-msg text-red-500 text-xs mt-2 hidden font-medium">⚠ Wajib diisi</p>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="group relative z-0 w-full">
+              <input type="date" id="dob"
+                class="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer transition-colors"
+                placeholder=" " />
+              <label for="dob"
+                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tanggal
+                Lahir</label>
+              <p class="error-msg text-red-500 text-xs mt-2 hidden font-medium">⚠ Wajib diisi</p>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div id="gender-container" class="space-y-3 pt-2">
+              <label class="text-sm font-medium text-slate-500">Jenis Kelamin</label>
+              <div class="flex items-center space-x-8">
+                <label class="inline-flex items-center cursor-pointer group">
+                  <div class="relative flex items-center">
+                    <input type="radio" name="gender" value="Laki-Laki"
+                      class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-primary transition-all">
+                    <span
+                      class="absolute bg-primary w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                  </div>
+                  <span class="ml-3 text-slate-600 group-hover:text-primary transition">Laki-Laki</span>
+                </label>
+                <label class="inline-flex items-center cursor-pointer group">
+                  <div class="relative flex items-center">
+                    <input type="radio" name="gender" value="Perempuan"
+                      class="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-primary transition-all">
+                    <span
+                      class="absolute bg-primary w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                  </div>
+                  <span class="ml-3 text-slate-600 group-hover:text-primary transition">Perempuan</span>
+                </label>
+              </div>
+              <p class="error-msg text-red-500 text-xs mt-1 hidden font-medium">⚠ Wajib dipilih</p>
+            </div>
+
+            <!-- Pesan -->
+            <div class="group relative z-0 w-full">
+              <textarea id="message" rows="4"
+                class="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-primary peer transition-colors resize-none"
+                placeholder=" "></textarea>
+              <label for="message"
+                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Pesan
+                Anda (Min 10 karakter)</label>
+              <p class="error-msg text-red-500 text-xs mt-2 hidden font-medium">⚠ Minimal 10 karakter</p>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-dark text-white font-bold py-4 px-6 rounded-xl hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1 mt-4 tracking-wide">
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+
+        <!-- Output Section (Visual) -->
+        <div class="md:w-1/2 bg-slate-50 relative p-10 md:p-16 flex flex-col justify-center border-l border-slate-100">
+          <div class="absolute inset-0 opacity-10"
+            style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+
+          <div id="result-container" class="glass-card rounded-3xl p-8 relative z-10 transition-all duration-500">
+            <h3 class="font-bold text-dark mb-8 text-2xl flex items-center border-b border-slate-200 pb-4">
+              <span
+                class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4 shadow-sm text-lg">✓</span>
+              Preview
+            </h3>
+
+            <div class="space-y-6">
+              <div class="flex justify-between items-center">
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Time</span>
+                <span id="current-time" class="text-primary font-mono text-sm bg-primary/10 px-2 py-1 rounded">-</span>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-1">From</span>
+                <span id="sender-name" class="text-xl font-medium text-dark block">-</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-6">
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-1">Born</span>
+                  <span id="sender-dob" class="text-slate-700">-</span>
+                </div>
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-1">Gender</span>
+                  <span id="sender-gender" class="text-slate-700">-</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block mb-2">Message</span>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative">
+                  <svg class="absolute top-4 left-4 w-6 h-6 text-slate-200 transform -scale-x-100" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M14.017 21L14.017 18C14.017 16.8954 13.1216 16 12.017 16H9C9.00001 15 9.00001 14 9.00001 13C9.00001 11.8954 9.89544 11 11 11H19C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H14.017ZM8 21C8 21.5523 7.55228 22 7 22C6.44772 22 6 21.5523 6 21L6 13C6 11.8954 6.89543 11 8 11V7.17157C8 6.64092 8.21071 6.13203 8.58579 5.75696L10.5858 3.75696C11.3668 2.97591 12.6332 2.97591 13.4142 3.75696L15.4142 5.75696C15.7893 6.13203 16 6.64092 16 7.17157V11H19C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H14V21H8Z"
+                      opacity="0.5" />
+                  </svg>
+                  <p id="sender-message" class="text-slate-600 italic pl-6 relative z-10 leading-relaxed min-h-[60px]">-
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12 relative z-10">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-8">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center space-x-3 mb-2">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+              <img src="images/logo-white.svg" alt="Lumina Logo" class="w-5 h-5">
+            </div>
+            <span class="text-4xl font-cursive font-bold tracking-wide">Lumina</span>
+          </div>
+          <p class="text-slate-400 text-sm max-w-xs">Premium artisanal coffee, brewed for perfection.</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-instagram.svg" alt="Instagram" class="w-6 h-6">
+          </a>
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-twitter.svg" alt="Twitter" class="w-6 h-6">
+          </a>
+          <a href="#" class="text-slate-400 hover:opacity-80 transition transform hover:scale-110">
+            <img src="images/icon-facebook.svg" alt="Facebook" class="w-6 h-6">
+          </a>
+        </div>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-sm text-slate-500">&copy; 2024 Lumina. Created with ❤️ by <span class="font-bold text-white">Kholid</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
